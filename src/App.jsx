@@ -37,36 +37,36 @@ function App() {
         {/* LATIHAN 2 - GRID GALERI */}
         <div>
           <h2 className="text-xl font-bold p-4">LATIHAN 2</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
             <img
               src="https://placehold.co/200x200"
               alt="Gambar Galeri"
-              className="w-full"
+              className="w-full bg-gray-200"
             />
           </div>
         </div>
