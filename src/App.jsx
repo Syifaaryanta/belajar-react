@@ -3,29 +3,29 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="p-6 space-y-8">
+      <div className="space-y-8">
         {/* LATIHAN 1 - NAVBAR */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">LATIHAN 1</h2>
-          <nav className="bg-slate-800 p-4">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div>
+          <h2 className="text-xl font-bold p-4">LATIHAN 1</h2>
+          <nav className="bg-gray-100 p-4">
+            <div className="flex flex-col md:flex-row justify-between items-center">
               {/* Kiri - Logo */}
-              <div className="font-bold text-2xl text-white mb-4 md:mb-0">Logo</div>
+              <div className="font-bold text-lg mb-4 md:mb-0">MyLogo</div>
 
               {/* Kanan - Menu */}
-              <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+              <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                 <li>
-                  <a href="#" className="text-white hover:text-gray-300">
+                  <a href="#" className="text-gray-700 hover:text-gray-900">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-gray-300">
+                  <a href="#" className="text-gray-700 hover:text-gray-900">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-white hover:text-gray-300">
+                  <a href="#" className="text-gray-700 hover:text-gray-900">
                     Contact
                   </a>
                 </li>
@@ -33,82 +33,70 @@ function App() {
             </div>
           </nav>
         </div>
-        <hr />
+
         {/* LATIHAN 2 - GRID GALERI */}
-        LATIHAN 2
-        <div className="p-4">
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
-          <img
-            src="https://www.placehold.co/200x200"
-            alt="Gambar Galeri"
-            className="h-48"
-          />
+        <div>
+          <h2 className="text-xl font-bold p-4">LATIHAN 2</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+            <img
+              src="https://placehold.co/200x200"
+              alt="Gambar Galeri"
+              className="w-full"
+            />
+          </div>
         </div>
-        <hr />
         {/* LATIHAN 3 - PRICING TABLE */}
-        LATIHAN 3
-        <div className="p-4 text-center">
-          <div className="bg-gray-200 p-6 rounded">
-            Basic
-            <br />
-            Rp 50.000
-          </div>
-          <div className="bg-gray-200 p-6 rounded">
-            Pro
-            <br />
-            Rp 100.000
-          </div>
-          <div className="bg-gray-200 p-6 rounded">
-            Premium
-            <br />
-            Rp 200.000
+        <div>
+          <h2 className="text-xl font-bold p-4">LATIHAN 3</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+            <div className="bg-gray-100 p-6 text-center">
+              <div className="font-semibold">Basic</div>
+              <div className="mt-2">Rp 50.000</div>
+            </div>
+            <div className="bg-blue-100 p-6 text-center">
+              <div className="font-semibold">Pro</div>
+              <div className="mt-2">Rp 100.000</div>
+            </div>
+            <div className="bg-gray-100 p-6 text-center">
+              <div className="font-semibold">Premium</div>
+              <div className="mt-2">Rp 200.000</div>
+            </div>
           </div>
         </div>
-        <hr />
+
         {/* LATIHAN 4 - DASHBOARD LAYOUT */}
-        LATIHAN 4
-        <div className="min-h-screen">
-          <header className="bg-gray-300 p-4">Header</header>
-          <aside className="bg-gray-200 p-4">Sidebar</aside>
-          <main className="bg-white p-4 border">Content</main>
-          <footer className="bg-gray-300 p-4">Footer</footer>
-        </div>
-        <hr />
-        {/* LATIHAN 5 - CARD PRODUCT */}
-        LATIHAN 5
-        <div className="p-4 border">
-          <img
-            src="https://www.placehold.co/80x80"
-            alt="Gambar Produk"
-            className="h-20 w-20"
-          />
-          <div>
-            <h3 className="font-bold">Nama Produk</h3>
-            <p className="text-sm text-gray-600">Deskripsi produk singkat...</p>
+        <div>
+          <h2 className="text-xl font-bold p-4">LATIHAN 4</h2>
+          <div className="grid min-h-[400px] grid-cols-[200px,1fr] grid-rows-[auto,1fr,auto]">
+            <header className="bg-gray-200 p-4 col-span-2">Header</header>
+            <aside className="bg-gray-100 p-4">Sidebar</aside>
+            <main className="bg-white p-4">Content</main>
+            <footer className="bg-gray-200 p-4 col-span-2">Footer</footer>
           </div>
         </div>
       </div>
