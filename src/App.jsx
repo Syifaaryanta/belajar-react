@@ -7,25 +7,25 @@ function App() {
         {/* LATIHAN 1 - NAVBAR */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4">LATIHAN 1</h2>
-          <nav className="p-4 bg-blue-600 text-white rounded-lg">
+          <nav className="bg-slate-800 p-4">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
               {/* Kiri - Logo */}
-              <div className="font-bold text-xl mb-4 md:mb-0">MyLogo</div>
+              <div className="font-bold text-2xl text-white mb-4 md:mb-0">Logo</div>
 
               {/* Kanan - Menu */}
-              <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 items-center">
+              <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
                 <li>
-                  <a href="#" className="hover:text-blue-200 transition-colors">
+                  <a href="#" className="text-white hover:text-gray-300">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-blue-200 transition-colors">
+                  <a href="#" className="text-white hover:text-gray-300">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-blue-200 transition-colors">
+                  <a href="#" className="text-white hover:text-gray-300">
                     Contact
                   </a>
                 </li>
