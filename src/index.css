@@ -78,7 +78,7 @@ html {
 }
 
 .post-button.clicked {
-  background-color: #b83016; /* Special Red2 */
+  background-color: #b83016; 
   color: white;
 }
 

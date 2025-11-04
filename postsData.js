@@ -75,7 +75,7 @@ const postsData = [
     "userId": 2,
     "id": 13,
     "title": "dolorum ut in voluptas mollitia et saepe quo animi",
-    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque iste corrupti reiciendis voluptatem eius rerum sit cumque quod eligendi laborum minima"
+    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima"
   },
   {
     "userId": 2,
