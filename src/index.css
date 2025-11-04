@@ -20,8 +20,73 @@
   --color-special-mainBg: #f4f5f7;
   --color-special-green: #4daf6e;
   --color-special-red: #e73d1c;
+  --color-special-red2: #b83016;
 }
 
 html {
   font-size: 75%;
+}
+
+/* PostCard Styles */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 400px;
+  margin: 1rem;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #e73d1c;
+  background-color: #fce7f3; /* Pink background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #191919;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.post-body {
+  flex-grow: 1;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.post-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.post-button.unclicked {
+  background-color: #878787; 
+  color: white;
+}
+
+.post-button.clicked {
+  background-color: #b83016; /* Special Red2 */
+  color: white;
+}
+
+.post-button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.post-card:hover .post-button {
+  filter: brightness(1.3);
 }

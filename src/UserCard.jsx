@@ -1,41 +1,41 @@
 import React, { useState } from "react";
 
 function UserCard(props) {
-    const { name, email, street, city, ...rest } = props;
+    const { id, userId, title, body } = props;
     const [clicked, setClicked] = useState(false);
 
-    // Fungsi handler
+    // Fungsi handler untuk klik tombol
     function handleClick() {
         setClicked(true);
     }
 
-    console.log(rest);
-
     return (
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">{name}</h2>
-            <p className="text-gray-600">
-                <span className="font-medium">Email:</span> {email}
-            </p>
-            <p className="text-gray-600">
-                <span className="font-medium">Address:</span> {street}, {city}
-            </p>
-
-            {/* Menampilkan data tambahan dari rest */}
-            {Object.entries(rest).map(([key, value]) => (
-                <p key={key} className="text-gray-600">
-                    <span className="font-medium capitalize">{key}:</span> {value}
+        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 h-80 flex flex-col transition-all duration-300 hover:scale-105 hover:border-black hover:bg-pink-50 hover:shadow-lg">
+            <div className="mb-3 flex-1 text-center">
+                <h3 className="text-base font-semibold text-gray-800 mb-3 capitalize leading-tight">
+                    {title}
+                </h3>
+                
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {body}
                 </p>
-            ))}
+            </div>
 
-            <button
-                className={`${clicked ? "bg-special-green" : "bg-gray-01"} text-white p-2 rounded-md`}
-                onClick={() => setClicked(true)}
-            >
-                {clicked ? "Tombol Sudah Diklik" : "Silakan Klik"}
-            </button>
+            <div className="mt-auto">
+                <button
+                    onClick={handleClick}
+                    className={`w-full py-2 px-4 rounded text-white text-sm font-medium transition-all duration-200 hover:brightness-125 hover:shadow-md ${
+                        clicked 
+                            ? "bg-red-500 hover:bg-red-400" 
+                            : "bg-gray-500 hover:bg-gray-400"
+                    }`}
+                >
+                    {clicked ? "Selected Card" : "Select Card"}
+                </button>
+            </div>
         </div>
     );
 }
 
 export default UserCard;
+
