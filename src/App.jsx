@@ -1,11 +1,31 @@
 import "./App.css";
+import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
+import ErrorPage from "./pages/error";
+import DashboardPage from "./pages/dashboard";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 
 function App() {
+  const myRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <DashboardPage />,
+      errorElement: <ErrorPage />,
+    },
+    { 
+      path: "/login",
+      element: <SignInPage />,
+    },
+    {
+      path: "/register",
+      element: <SignUpPage />,
+    }
+  ]);
+
   return (
-   <>
-   <SignUpPage />  
-   </>
+    <>
+      <RouterProvider router={myRouter} />
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import LabeledInput from '../Element/LabeledInput'
 import Button from '../Element/Button'
 
@@ -110,9 +111,9 @@ function FormSignUp() {
       <div className="flex justify-center">
         <span className="text-sm text-gray-01">
           Already have an account?{' '}
-          <a href="#" className="text-primary font-bold">
+          <Link to="/login" className="text-primary font-bold">
             Sign in here
-          </a>
+          </Link>
         </span>
       </div>
       {/* link end */}
