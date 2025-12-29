@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../Element/Logo";
 import Input from "../Element/Input";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Icon from "../Element/Icon";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../../context/themeContext";
 
 function MainLayout(props) {
   const { children } = props;
+
+  const themes = [
+    { name: "theme-green", bgcolor: "bg-[#299D91]", color: "#299D91" },
+    { name: "theme-blue", bgcolor: "bg-[#1E90FF]", color: "#1E90FF" },
+    { name: "theme-purple", bgcolor: "bg-[#6A5ACD]", color: "#6A5ACD" },
+    { name: "theme-pink", bgcolor: "bg-[#DB7093]", color: "#DB7093" },
+    { name: "theme-brown", bgcolor: "bg-[#8B4513]", color: "#8B4513" },
+  ];
+
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const menu = [
     { id: 1, name: "Overview", icon: <Icon.Overview />, link: "/" },
@@ -20,7 +31,7 @@ function MainLayout(props) {
 
   return (
     <>
-      <div className="flex min h-screen">
+      <div className={`flex min-h-screen ${theme.name}`}>
         <aside className="w-28 sm:w-64 bg-defaultBlack w-28 text-special-bg2 flex flex-col justify-between px-7 py-12 fixed h-screen">
           <div>
             <div>
@@ -47,11 +58,26 @@ function MainLayout(props) {
             </nav>
           </div>
           <div>
+            Themes
+            <div className="flex flex-col sm:flex-row gap-2 items-center">
+              {themes.map((t) => (
+                <div
+                  key={t.name}
+                  className={`${t.bgcolor} w-6 h-6 rounded-md cursor-pointer mb-2`}
+                  onClick={() => setTheme(t)}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div>
             <div>
-              <div className="flex items-center bg-special-bg3 text-white px-4 py-3 rounded-md">
-                <div className="mx-auto sm:mx-0"><Icon.Logout /></div>
-                <div className="ms-3 hidden sm:block">Logout</div>
-              </div>
+              <NavLink to="/login">
+                <div className="flex items-center bg-special-bg3 text-white px-4 py-3 rounded-md">
+                  <div className="mx-auto sm:mx-0 text-primary">
+                    <Icon.Logout /></div>
+                  <div className="ms-3 hidden sm:block">Logout</div>
+                </div>
+              </NavLink>
             </div>
             <div className="border my-10 border-b-special-bg"></div>
             <div>
@@ -67,7 +93,7 @@ function MainLayout(props) {
               </div>
             </div>
           </div>
-        </aside>
+        </aside >
         <div className="bg-special-mainBg flex-1 flex flex-col ml-28 sm:ml-64">
           <header className="border border-b border-gray-05 px-6 py-7 flex justify-between items-center">
             <div className="flex items-center">
@@ -78,13 +104,13 @@ function MainLayout(props) {
             </div>
             <div className="flex items-center">
               <div className="me-10"><NotificationsIcon
-                className="text-gray-01 scale-110" /></div>
+                className="text-primary scale-110" /></div>
               <Input backgroundColor="bg-white" border="border-white" />
             </div>
           </header>
           <main className="flex-1 px-6 py-7">{children}</main>
         </div>
-      </div>
+      </div >
     </>
   );
 }
