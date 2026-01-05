@@ -1,22 +1,42 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MainLayout from "../components/Layouts/MainLayout";
 import CardBalance from "../components/Fragment/CardBalance";
 import CardGoal from "../components/Fragment/CardGoal";
 import CardUpcomingBill from "../components/Fragment/CardUpcomingBill";
 import CardRecentTransaction from "../components/Fragment/CardRecentTransactions";
 import CardStatistics from "../components/Fragment/CardStatistics";
-import CardExpenseBreakdown from "../components/Fragment/CardExpenseBreakdown";   
+import CardExpenseBreakdown from "../components/Fragment/CardExpenseBreakdown";
 import {
   transactions,
   bills,
   balances,
-  goals,
   expensesStatistics,
   expensesBreakdowns
 } from "../data";
+import { goalService } from "../services/dataService";
+import { AuthContext } from "../context/authContext";
 
 function Dashboard() {
-  console.log(transactions);
+  const [goalsData, setGoalsData] = useState(null);
+  const { logout } = useContext(AuthContext);
+
+  const fetchGoals = async () => {
+    try {
+      const data = await goalService();
+      setGoalsData(data);
+    } catch (err) {
+      console.error("Gagal mengambil data goals:", err);
+      if (err.status === 401) {
+        logout();
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchGoals();
+  }, []);
+
+  console.log(goalsData);
 
   return (
     <>
@@ -26,7 +46,7 @@ function Dashboard() {
             <CardBalance data={balances} />
           </div>
           <div className="sm:col-span-4">
-            <CardGoal data={goals} />
+            {goalsData && <CardGoal data={goalsData} />}
           </div>
           <div className="sm:col-span-4">
             <CardUpcomingBill data={bills} />

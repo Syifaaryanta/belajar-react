@@ -3,53 +3,72 @@ import { Link } from 'react-router-dom'
 import LabeledInput from '../Element/LabeledInput'
 import CheckBox from '../Element/CheckBox'
 import Button from '../Element/Button'
+import { useState } from 'react'
 
-function FormSignIn() {
+function FormSignIn({ onSubmit }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(email  , password);
+
+  };
   return (
     <>
       {/* form start */}
-      <div className="mt-16">
-        <form action="">
-          <LabeledInput
-            label="Email address"
-            type="email"
-            id="email"
-            placeholder="hello@example.com"
-            name="email"
-          />
-          <LabeledInput
-            label="Password"
-            type="password"
-            id="password"
-            placeholder="*************"
-            name="password"
-          />
-          <div className="mb-3">
-            <CheckBox
-              label="Keep me signed in"
-              id="status"
-              name="status"
-              type="checkbox"
-            />
+      <div className="mt-8">
+        <form onSubmit={handleSubmit}>  
+          <div className="mb-6">
+            <div className="mb-6">
+              <LabeledInput
+                label="Email Address"
+                type="email"
+                id="email"
+                placeholder="hello@example.com"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mb-6">
+              <LabeledInput
+                label="Password"
+                type="password"
+                id="password"
+                placeholder="*************"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="mb-6">
+              <CheckBox
+                label="Keep me signed in"
+                id="status"
+                name="status"
+                type="checkbox"
+              />
+            </div>
           </div>
           <Button> Login </Button>
         </form>
       </div>
       {/* form end */}
       {/* teks start */}
-      <div className="my-9 px-7 flex flex-col justify-center items-center text-xs text-gray-03">
+      <div className="my-8 px-7 flex flex-col justify-center items-center text-xs text-gray-03">
         <div className="border border-gray-05 w-full"></div>
-        <div className="px-2 bg-special-mainBg absolute"> or sign in with</div>
+        <div className="px-2 bg-special-mainBg absolute">or sign in with</div>
       </div>
       {/* teks end */}
       {/* sign in with google start */}
-      <div className="mb-8">
+      <div className="mb-6">
         <Button type="button" variant="secondary">
           <span className="flex items-center justify-center">
             <svg
-              class="h-6 w-6 mr-2"
+              className="h-6 w-6 mr-2"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               width="800px"
               height="800px"
               viewBox="-0.5 0 48 48"
@@ -60,9 +79,9 @@ function FormSignIn() {
               <g
                 id="Icons"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               >
                 <g id="Color-" transform="translate(-401.000000, -860.000000)">
                   <g id="Google" transform="translate(401.000000, 860.000000)">
