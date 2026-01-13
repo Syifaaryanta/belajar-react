@@ -19,3 +19,31 @@ export const goalService = async () => {
     };
   }
 };
+
+export const expenseService = async () => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const response = await axios.get(`${API_URL}/expenses`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }, 
+    });
+    
+    console.log("Raw expenses response:", response.data);
+   
+    if (response.data) {
+      return response.data;
+    } else if (Array.isArray(response.data)) {
+      return response.data;
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.error("Expense service error:", error);
+    throw {
+      status: error.response?.status,
+      msg: error.response?.data?.msg || "Gagal mengambil data expenses",
+    };
+  }
+};
